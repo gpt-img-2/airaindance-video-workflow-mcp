@@ -1,0 +1,64 @@
+{
+  "name": "airaindance-video-workflow-mcp",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.11.1",
+  "description": "Deterministic, read-only MCP tools and an OpenClaw Skill for original Raindance-trend video briefs, storyboards, prompt checks, and Airaindance resources.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "airaindance-video-workflow-mcp": "bin/airaindance-video-workflow-mcp.js"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "openclaw/",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "smoke": "node scripts/smoke-mcp-client.mjs",
+    "validate": "pnpm typecheck && pnpm test && pnpm build && pnpm smoke"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "airaindance",
+    "raindance-video",
+    "storyboard",
+    "video-storyboard",
+    "rights-check",
+    "openclaw"
+  ],
+  "author": {
+    "name": "Airaindance",
+    "url": "https://airaindance.video"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpt-img-2/airaindance-video-workflow-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gpt-img-2/airaindance-video-workflow-mcp/issues"
+  },
+  "homepage": "https://airaindance.video",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.3.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.3.1",
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
